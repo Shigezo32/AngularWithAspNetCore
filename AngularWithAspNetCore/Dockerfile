@@ -11,6 +11,10 @@ COPY . .
 WORKDIR "/src/AngularWithAspNetCore"
 RUN dotnet build "AngularWithAspNetCore.csproj" -c Release -o /app
 
+RUN apt-get -qq update && apt-get install build-essential -y && apt-get install -my wget gnupg && apt-get -qq -y install bzip2
+RUN curl -sL https://deb.nodesource.com/setup_10.x |  bash -
+RUN apt-get install -y nodejs
+
 FROM build AS publish
 RUN dotnet publish "AngularWithAspNetCore.csproj" -c Release -o /app
 
