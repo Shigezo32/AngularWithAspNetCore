@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:docker": "docker-compose -f docker-compose.serve.yml up",
     "build": "ng build",
+    "build:docker": "docker-compose -f docker-compose.build.yml up",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
